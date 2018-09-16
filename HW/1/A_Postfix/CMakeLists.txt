@@ -1,0 +1,1 @@
+add_executable(1_A_Postfix main.cpp)
