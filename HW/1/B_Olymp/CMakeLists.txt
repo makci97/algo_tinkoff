@@ -1,0 +1,1 @@
+add_executable(1_B_Olymp main.cpp)
