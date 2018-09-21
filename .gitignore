@@ -71,3 +71,4 @@ fabric.properties
 templates/
 codestyles/
 _mac/
+.idea*
