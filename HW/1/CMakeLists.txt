@@ -1,3 +1,4 @@
 add_subdirectory(A_Postfix)
 add_subdirectory(B_Olymp)
 add_subdirectory(C_Trucks)
+add_subdirectory(D_Brackets)
