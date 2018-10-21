@@ -1,1 +1,4 @@
 add_subdirectory(A_Grasshopper)
+add_subdirectory(B_Horse)
+add_subdirectory(C_Horse_2)
+add_subdirectory(E_PDD)
