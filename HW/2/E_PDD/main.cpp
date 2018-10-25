@@ -3,7 +3,6 @@
 #include <fstream>
 #include <vector>
 #include <stack>
-#include "assert.h"
 
 
 enum direction {none, south, east};
@@ -17,20 +16,20 @@ void eval_ways(
 {
     ways_map[0][0] = {map[0][0], none};
 
-    for(int i = 0; i < n; ++i)
+    for (int i = 0; i < n; ++i)
     {
-        for(int j = 0; j < m; ++j)
+        for (int j = 0; j < m; ++j)
         {
-            if(j == 0)
+            if (j == 0)
             {
-                if(i != 0)
+                if (i != 0)
                 {
                     ways_map[i][j] = {ways_map[i - 1][j].first + map[i][j], south};
                 }
             }
             else
             {
-                if(i != 0 && ways_map[i - 1][j].first < ways_map[i][j - 1].first)
+                if (i != 0 && ways_map[i - 1][j].first < ways_map[i][j - 1].first)
                 {
                     ways_map[i][j] = {ways_map[i - 1][j].first + map[i][j], south};
                 }
@@ -38,7 +37,6 @@ void eval_ways(
                 {
                     ways_map[i][j] = {ways_map[i][j - 1].first + map[i][j], east};
                 }
-
             }
         }
     }
@@ -56,12 +54,11 @@ void print_way(
     out_stream << ways_map[n][m].first << std::endl;
 
     std::stack<std::pair<int, int> > way;
-    while(n > 0 || m > 0)
+    while (n > 0 || m > 0)
     {
-        assert(ways_map[n][m].second != none);
         way.push({n + 1, m + 1});
 
-        if(ways_map[n][m].second == east)
+        if (ways_map[n][m].second == east)
             --m;
         else if (ways_map[n][m].second == south)
             --n;
@@ -70,7 +67,7 @@ void print_way(
 
     out_stream << way.size() << std::endl;
 
-    while(!way.empty())
+    while (!way.empty())
     {
         out_stream << way.top().first << ' ' << way.top().second << std::endl;
         way.pop();
@@ -82,15 +79,15 @@ int main() {
     int n, m, cost;
     std::ifstream in_stream;
     std::ofstream out_stream;
-    in_stream.open ("input");
+    in_stream.open("input");
     out_stream.open("output");
 
     in_stream >> n >> m;
     std::vector<std::vector<int> > map;
-    for(int i = 0; i < n; ++i)
+    for (int i = 0; i < n; ++i)
     {
         std::vector<int> row;
-        for(int j = 0; j < m; ++j)
+        for (int j = 0; j < m; ++j)
         {
             in_stream >> cost;
             row.push_back(cost);
@@ -101,7 +98,7 @@ int main() {
 
     std::vector<std::vector<std::pair<int, direction> > > ways_map;
     std::vector<std::pair<int, direction>> clear_row(m, {0, none});
-    for(int i = 0; i < n; ++i)
+    for (int i = 0; i < n; ++i)
         ways_map.push_back(clear_row);
 
     eval_ways(ways_map, map, n, m);
