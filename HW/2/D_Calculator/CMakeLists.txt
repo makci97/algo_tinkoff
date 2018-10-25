@@ -1,0 +1,1 @@
+add_executable(2_D_Calculator main.cpp)
