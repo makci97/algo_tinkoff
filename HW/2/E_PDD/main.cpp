@@ -79,7 +79,7 @@ int main() {
     int n, m, cost;
     std::ifstream in_stream;
     std::ofstream out_stream;
-    in_stream.open("input");
+    in_stream.open("atm.in");
     out_stream.open("output");
 
     in_stream >> n >> m;
