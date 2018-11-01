@@ -1,0 +1,1 @@
+add_executable(2_G_Rabbit main.cpp)

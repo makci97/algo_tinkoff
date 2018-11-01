@@ -1,0 +1,1 @@
+add_executable(2_I_Subseq main.cpp)

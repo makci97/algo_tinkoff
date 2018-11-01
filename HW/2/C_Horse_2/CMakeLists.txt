@@ -1,0 +1,1 @@
+add_executable(2_C_Horse_2 main.cpp)

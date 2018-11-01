@@ -1,0 +1,1 @@
+add_executable(2_F_Ones main.cpp)
