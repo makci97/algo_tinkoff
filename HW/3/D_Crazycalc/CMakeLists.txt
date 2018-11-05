@@ -1,0 +1,1 @@
+add_executable(3_D_Crazycalc main.cpp)
