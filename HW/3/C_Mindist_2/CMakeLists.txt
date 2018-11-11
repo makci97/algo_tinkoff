@@ -1,0 +1,1 @@
+add_executable(3_C_Mindist_2 main.cpp)
