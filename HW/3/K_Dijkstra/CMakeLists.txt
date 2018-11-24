@@ -1,0 +1,1 @@
+add_executable(3_K_Dijkstra main.cpp)
